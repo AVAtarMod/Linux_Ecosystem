@@ -1,4 +1,4 @@
-#include <sqlpp11/select.h>
+#include <sqlpp11/sqlpp11.h>
 #include <sqlpp11/postgresql/connection.h>
 
 #include "orm.h"
@@ -21,7 +21,10 @@ int main()
    config->user = secret_db_username;
    config->password = secret_db_password;
    config->host = secret_db_host;
-   config->dbname = secret_dbname;   
+   config->dbname = secret_dbname;
 
    pg::connection db(config);
+
+   model::ManifestScheme mscheme = {};
+   db(sqlpp::insert_into(mscheme).set(mscheme.fieldDescription = "{\"fields\":[\"1\",\"2\",\"etc...\"],\"desc\":\"default scheme\"}"));
 }
