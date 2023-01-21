@@ -8,7 +8,7 @@
 
 namespace model
 {
-  namespace ExternalViewComponent Info_
+  namespace ExternalViewComponentInfo_
   {
     struct ComponentId
     {
@@ -26,10 +26,10 @@ namespace model
       };
       using _traits = sqlpp::make_traits<sqlpp::integer, sqlpp::tag::must_not_insert, sqlpp::tag::must_not_update>;
     };
-  } // namespace ExternalViewComponent Info_
+  } // namespace ExternalViewComponentInfo_
 
-  struct ExternalViewComponent Info: sqlpp::table_t<ExternalViewComponent Info,
-               ExternalViewComponent Info_::ComponentId>
+  struct ExternalViewComponentInfo: sqlpp::table_t<ExternalViewComponentInfo,
+               ExternalViewComponentInfo_::ComponentId>
   {
     struct _alias_t
     {
@@ -38,13 +38,13 @@ namespace model
       template<typename T>
       struct _member_t
       {
-        T ExternalViewComponent Info;
-        T& operator()() { return ExternalViewComponent Info; }
-        const T& operator()() const { return ExternalViewComponent Info; }
+        T ExternalViewComponentInfo;
+        T& operator()() { return ExternalViewComponentInfo; }
+        const T& operator()() const { return ExternalViewComponentInfo; }
       };
     };
   };
-  namespace Component Status_
+  namespace ComponentStatus_
   {
     struct ComponentId
     {
@@ -94,12 +94,12 @@ namespace model
       };
       using _traits = sqlpp::make_traits<sqlpp::integer, sqlpp::tag::require_insert>;
     };
-  } // namespace Component Status_
+  } // namespace ComponentStatus_
 
-  struct Component Status: sqlpp::table_t<Component Status,
-               Component Status_::ComponentId,
-               Component Status_::IsEnabled,
-               Component Status_::Status>
+  struct ComponentStatus: sqlpp::table_t<ComponentStatus,
+               ComponentStatus_::ComponentId,
+               ComponentStatus_::IsEnabled,
+               ComponentStatus_::Status>
   {
     struct _alias_t
     {
@@ -108,13 +108,13 @@ namespace model
       template<typename T>
       struct _member_t
       {
-        T Component Status;
-        T& operator()() { return Component Status; }
-        const T& operator()() const { return Component Status; }
+        T ComponentStatus;
+        T& operator()() { return ComponentStatus; }
+        const T& operator()() const { return ComponentStatus; }
       };
     };
   };
-  namespace Component Dependency_
+  namespace ComponentDependency_
   {
     struct ComponentId
     {
@@ -164,12 +164,12 @@ namespace model
       };
       using _traits = sqlpp::make_traits<sqlpp::boolean, sqlpp::tag::require_insert>;
     };
-  } // namespace Component Dependency_
+  } // namespace ComponentDependency_
 
-  struct Component Dependency: sqlpp::table_t<Component Dependency,
-               Component Dependency_::ComponentId,
-               Component Dependency_::DependencyId,
-               Component Dependency_::IsStrict>
+  struct ComponentDependency: sqlpp::table_t<ComponentDependency,
+               ComponentDependency_::ComponentId,
+               ComponentDependency_::DependencyId,
+               ComponentDependency_::IsStrict>
   {
     struct _alias_t
     {
@@ -178,13 +178,13 @@ namespace model
       template<typename T>
       struct _member_t
       {
-        T Component Dependency;
-        T& operator()() { return Component Dependency; }
-        const T& operator()() const { return Component Dependency; }
+        T ComponentDependency;
+        T& operator()() { return ComponentDependency; }
+        const T& operator()() const { return ComponentDependency; }
       };
     };
   };
-  namespace Component Endpoint_
+  namespace ComponentEndpoint_
   {
     struct EndpointId
     {
@@ -234,12 +234,12 @@ namespace model
       };
       using _traits = sqlpp::make_traits<sqlpp::integer, sqlpp::tag::require_insert>;
     };
-  } // namespace Component Endpoint_
+  } // namespace ComponentEndpoint_
 
-  struct Component Endpoint: sqlpp::table_t<Component Endpoint,
-               Component Endpoint_::EndpointId,
-               Component Endpoint_::Name,
-               Component Endpoint_::ComponentId>
+  struct ComponentEndpoint: sqlpp::table_t<ComponentEndpoint,
+               ComponentEndpoint_::EndpointId,
+               ComponentEndpoint_::Name,
+               ComponentEndpoint_::ComponentId>
   {
     struct _alias_t
     {
@@ -248,9 +248,9 @@ namespace model
       template<typename T>
       struct _member_t
       {
-        T Component Endpoint;
-        T& operator()() { return Component Endpoint; }
-        const T& operator()() const { return Component Endpoint; }
+        T ComponentEndpoint;
+        T& operator()() { return ComponentEndpoint; }
+        const T& operator()() const { return ComponentEndpoint; }
       };
     };
   };

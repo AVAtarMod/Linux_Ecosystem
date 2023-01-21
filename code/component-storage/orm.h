@@ -496,11 +496,28 @@ namespace model
       };
       using _traits = sqlpp::make_traits<sqlpp::integer, sqlpp::tag::require_insert>;
     };
+    struct IsActive
+    {
+      struct _alias_t
+      {
+        static constexpr const char _literal[] =  "is_active";
+        using _name_t = sqlpp::make_char_sequence<sizeof(_literal), _literal>;
+        template<typename T>
+        struct _member_t
+          {
+            T isActive;
+            T& operator()() { return isActive; }
+            const T& operator()() const { return isActive; }
+          };
+      };
+      using _traits = sqlpp::make_traits<sqlpp::boolean>;
+    };
   } // namespace Ecosystem_
 
   struct Ecosystem: sqlpp::table_t<Ecosystem,
                Ecosystem_::EcosystemId,
-               Ecosystem_::StoragePolicyId>
+               Ecosystem_::StoragePolicyId,
+               Ecosystem_::IsActive>
   {
     struct _alias_t
     {
