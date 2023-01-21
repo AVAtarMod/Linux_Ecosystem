@@ -2,3 +2,4 @@
 *.code-workspace
 *.bkp
 secrets.h
+build
