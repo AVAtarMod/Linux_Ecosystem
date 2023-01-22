@@ -1,12 +1,13 @@
 #include <sqlpp11/sqlpp11.h>
 #include <sqlpp11/postgresql/connection.h>
 
+#include "restapi/db_conf.h"
 #include "orm.h"
 #include "secrets.h"
 
 namespace pg = sqlpp::postgresql;
 
-int main()
+int main(int argc, char const *argv[])
 {
    /**
     * @brief Usage example:

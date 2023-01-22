@@ -1,0 +1,4 @@
+#ifndef ECOSYSTEM_RESTAPI_DB_CONF_H
+#define ECOSYSTEM_RESTAPI_DB_CONF_H
+
+#endif

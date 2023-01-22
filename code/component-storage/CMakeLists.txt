@@ -7,6 +7,7 @@ add_executable(component.app)
 
 target_sources(component.app PRIVATE ${sources})
 target_compile_options(component.app PUBLIC -std=c++11 -Wall -Wfloat-conversion)
+target_include_directories(component.app PUBLIC ../lib)
 target_link_libraries(component.app PUBLIC pq)
 
 install(TARGETS component.app)
