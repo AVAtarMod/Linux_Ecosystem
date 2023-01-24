@@ -4,6 +4,24 @@ CREATE TABLE "ExternalView_Component Info"
  CONSTRAINT PK_1 PRIMARY KEY ( component_id )
 );
 
+CREATE TABLE "DB Connection Info"
+(
+ connection_info_id serial NOT NULL,
+ component_id       bigint NOT NULL,
+ username           text NOT NULL,
+ password           text NOT NULL,
+ host               text NOT NULL,
+ port               int NOT NULL,
+ additional_options jsonb NULL,
+ CONSTRAINT PK_1 PRIMARY KEY ( connection_info_id ),
+ CONSTRAINT FK_5 FOREIGN KEY ( component_id ) REFERENCES "ExternalView_Component Info" ( component_id )
+);
+
+CREATE INDEX FK_2 ON "DB Connection Info"
+(
+ component_id
+);
+
 CREATE TABLE "Component status"
 (
  component_id bigint NOT NULL,
