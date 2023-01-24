@@ -1,0 +1,9 @@
+{
+   "version": 1,
+   "object": {
+      "developer": "ecosystem team",
+      "name": "storage test",
+      "version": 1,
+      "type": "component"
+   }
+}
